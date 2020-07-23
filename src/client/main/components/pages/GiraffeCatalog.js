@@ -1,12 +1,17 @@
 
 import React, { useEffect, useState } from 'react'
 import GiraffeCard from '../ui/GiraffeCard'
+import UpdateReport from '../ui/UpdateReport';
+import FilingReport from '../ui/FilingReport';
+
 //import fetch from 'isomorphic-unfetch';
 
 
 
 const giraffeCatalog = () => {
   const [items, setItems] = useState()
+  const [showInfo, setShowInfo] = useState(false)
+  const toggleShowInfo = () => setShowInfo(!showInfo)
   useEffect(() => {
     fetch('http://localhost:8080/api/giraffe')
       .then(r => r.json())
@@ -95,82 +100,11 @@ const giraffeCatalog = () => {
           </div>
           <div id="card-wrapper">
             {items.map((giraffe, index) => {
-              return <GiraffeCard key={index} name={giraffe.name} weight={giraffe.weight} sex={giraffe.sex} height={giraffe.heigth} />
-            })}
-            <div id="update-wrapper">
-              Обновления
-             <div id="update-close">
-                <i className="fas fa-times"></i>
-
-              </div>
-              <div id="update-separator">
-
-              </div>
-              <div id="update-data">
-                <table>
-                  <tr>
-                    <th>Дата</th>
-                    <th>Действие</th>
-                    <th>Жираф</th>
-                    <th>Статус</th>
-                  </tr>
-                  <tr>
-                    <td>01 июня 2020</td>
-                    <td>Новый жираф</td>
-                    <td>Пряник</td>
-                    <td >
-                    <div className="status-wait">Ожидается</div>
-                    </td>
-                    
-                  </tr>
-                  <tr>
-                    <td>01 июня 2020</td>
-                    <td>Новый жираф</td>
-                    <td>Пряники</td>
-                    <td className='p0'>
-                    <div className="status-done">Выполнено</div>
-                    </td>
-                    
-                  </tr>
-                  <tr>
-                    <td>01 июня 2020</td>
-                    <td>Новый жираф</td>
-                    <td>Пряник</td>
-                    <td>
-                    <div className="status-not-approved">Не подтвержден</div>
-                    </td>
-                    
-                  </tr>
-                  <tr>
-                    <td>01 июня 2020</td>
-                    <td>Новый жираф</td>
-                    <td>Пряник</td>
-                    <td>
-                    <div className="status-decline">Отклонено</div>
-                    </td>
-                    
-                  </tr>
-                </table>
-              </div>
-
-
-
-            </div>
-
-            <div id="filling-wrapper">
-              <div id="filling-close">
-                <i className="fas fa-times"></i>
-              </div>
-              <div id="filling-percent">75%</div>
-                <div id="filling-text">Заполение вольера</div>
-                <div id="filling-bar">
-                  <div id="filling-progress"></div>
-                </div>
-                <div id="filling-information"></div>
-
-
-            </div>
-
+              return <GiraffeCard key={index}
+              {...giraffe}
+               />})}
+            {showInfo && <UpdateReport setShowInfo={setShowInfo} />}
+            <FilingReport toggleShowInfo={toggleShowInfo}/>
           </div>
         </div>
       </div>

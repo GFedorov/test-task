@@ -11,7 +11,6 @@ body {
   color: #435F40;
 }
 
-
 /* CRM жирафов */
 
 .container {
@@ -74,6 +73,11 @@ body {
   color: #FFFFFF;
 }
 
+.aside-button:hover {
+  background: #FFFFFF;
+  color: #567354;
+}
+
 .aside-button i {
   display: inline-block;
   margin-right: 25px;
@@ -89,6 +93,10 @@ body {
 .aside-button.selected i {
   color: #435F40;
 }
+.aside-button:hover i {
+  color: #435F40;
+}
+
 
 /* Rectangle 35 */
 
@@ -233,9 +241,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 236px;
+  min-height: 236px;
   width: 1042px;
   margin-top: 26px;
+  position: relative;
 }
 
 .card {
@@ -245,15 +254,18 @@ body {
   background: #F3DBC7;
   border-radius: 28px;
   margin-right: 33px;
+  margin-bottom: 35px;
 }
 
 .edit-card {
   position: absolute;
   width: 18px;
   height: 21px;
-  background: #435F40;
   top: 14px;
   right: 23px;
+}
+.edit-card i{
+  cursor: pointer;
 }
 
 .card-settings {
@@ -277,9 +289,10 @@ body {
   line-height: 32px;
   text-align: center;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
-.edit.selected {
+.edit:hover {
   background: #435F40;
 }
 
@@ -293,8 +306,25 @@ body {
   line-height: 32px;
   text-align: center;
   color: #FFFFFF;
+  cursor: pointer;
 }
+.delete:hover {
+  background: #435F40;
+}
+.save{
+  width: 129px;
+height: 39px;
+line-height: 39px;
 
+
+background: #567354;
+border-radius: 33px;
+font-weight: 500;
+font-size: 16px;
+text-align: center;
+color: #FFFFFF;
+margin: 18px 54px 21px 53px;
+}
 .giraffe-photo {
   background-image: url(/img/mid_326078_138810.png);
   background-size: cover;
@@ -338,7 +368,15 @@ body {
 .giraffe-icons {
   width: 29px;
   height: 29px;
-  background: #435F40;
+  font-weight: 900;
+font-size: 25px;
+line-height: 29px;
+
+
+text-align: center;
+
+color: #435F40;
+  
 }
 
 .giraffe-data-wrapper {
@@ -384,18 +422,23 @@ body {
 }
 
 #update-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 506px;
   height: 287px;
   background: #FFFFFF;
   box-shadow: 0px 4px 15px #869CB0;
   border-radius: 28px;
-  margin: 35px 26px 0 55px;
+  margin-top: 35px;
   padding: 21px 33px;
+  transform: translateY(100%);
 }
 
 #update-close {
   float: right;
   display: inline-block;
+  cursor: pointer;
 }
 
 #update-separator {
@@ -431,32 +474,35 @@ body {
   padding-top: 12px;
   padding-bottom: 13px;
 }
-#update-data td.p0{
+
+#update-data td.p0 {
   padding: 0;
 }
-
-.status-wait {
-  background: #D2EFFF;
+.status{
   border-radius: 5px;
   padding: 5px;
   display: inline-block;
 }
 
-.status-done {
+.status.wait {
+  background: #D2EFFF;
+  
+}
+
+.status.done {
   background: #C1FFC8;
-  border-radius: 5px;
+  
 }
 
-.status-decline {
+.status.decline {
   background: #FFC1C1;
-  border-radius: 5px;
+ 
 }
 
-.status-not-approved {
+.status.not-approved {
   background: #FFEAC1;
-  border-radius: 5px;
+  
 }
-
 
 #filling-wrapper {
   margin-top: 76px;
@@ -464,6 +510,10 @@ body {
   height: 217px;
   background: #668663;
   border-radius: 28px;
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  transform: translateY(100%);
 }
 
 #filling-close {
@@ -471,6 +521,7 @@ body {
   float: right;
   margin: 14px 17px 0 auto;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 #filling-percent {
@@ -481,30 +532,56 @@ body {
   color: #FFFFFF;
   margin: 22px 9px 0 30px;
 }
-#filling-text{
+
+#filling-text {
   display: inline-block;
   font-weight: bold;
-font-size: 20px;
-line-height: 23px;
-text-align: center;
-
-color: #FFFFFF;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: #FFFFFF;
 }
-#filling-bar{
-  width: 323px;
-height: 31px;
 
-background: #435F40;
-border-radius: 35px;
-margin: 16px 23px 0 29px;
-padding: 4.23px 5.14px;
-
+#filling-bar {
+  min-width: 323px;
+  height: 31px;
+  background: #435F40;
+  border-radius: 35px;
+  margin: 16px 23px 0 29px;
+  padding: 4px 5px;
+  display: inline-block;
+  
 }
-#filling-progress{
+
+#filling-progress {
   width: 237.62px;
   height: 22.55px;
   background: #F3DBC7;
   border-radius: 35px;
+  display: inline-block;
+}
+
+#progress-wrapper{
+  display: flex;
+}
+
+#filling-information-btn {
+  margin-top:16px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 31px;
+  /* identical to box height */
+  text-align: center;
+  color: #FFFFFF;
+  display: inline-block;
+  width: 110px;
+  height: 31px;
+  background: #435F40;
+  border-radius: 35px;
+  
+  cursor: pointer;
+  
+  
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -38,6 +38,7 @@ npm i
 
 npm run dev (or another script)
 ```
+config file: src/server/.env
 # Final question - Horde or Alliance?
 
 
