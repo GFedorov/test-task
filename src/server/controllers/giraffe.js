@@ -1,4 +1,10 @@
+const Giraffe = require('../models/giraffe.js')
 
-module.exports = {
+const list = async(req, res) =>{
+    const giraffes = await Giraffe.list()
+    res.json({items:giraffes})
+
+}
+module.exports = { list
     
 }

@@ -1,5 +1,6 @@
 const multer = require('multer')
 const path = require('path')
+const giraffeController = require('../controllers/giraffe')
 const storage = multer.diskStorage({
     destination: './uploads/' /* relative to root dir of project */,
     filename: function (req, file, cb) {
@@ -20,18 +21,10 @@ module.exports = (app) => {
     })
 
     // Giraffe API
+    app.get('/api/giraffe', giraffeController.list)
+
     app.post('/api/giraffe', (req, res) => {
         
-    })
-    app.route('/api/giraffe/:id')
-        .get((req, res) => {
-            
-        })
         
-        .put((req, res) => {
-            
-        })
-        .delete((req, res) => {
-            
-        })
+    })
 }

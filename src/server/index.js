@@ -1,3 +1,8 @@
+require('dotenv').config(
+    //{path:"../../.env"}
+    )
+
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -10,7 +15,8 @@ const PORT = process.env.PORT ? process.env.PORT : 8080;
 const mongoose = require('mongoose');
 app.use(bodyParser.json());
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://127.0.0.1:27017/light-tech-test-db', { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true });
+
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/light-tech-test-db', { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true });
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -40,6 +46,7 @@ if (process.env.NODE_ENV == 'production') {
         }));
     app.use(require('webpack-hot-middleware')(compiler));
 
+
     // const options = {
     //     key: fs.readFileSync(__dirname + '/ssl/key.pem'),
     //     cert: fs.readFileSync(__dirname + '/ssl/cert.pem'),
@@ -51,6 +58,8 @@ if (process.env.NODE_ENV == 'production') {
         console.log(`Server listening port: ${PORT}`);
     })
 }
+
+
 module.exports = app
 
 

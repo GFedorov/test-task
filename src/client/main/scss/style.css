@@ -1,0 +1,361 @@
+@charset "UTF-8";
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: #435F40;
+}
+
+/* CRM жирафов */
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1440px;
+  max-height: 900px;
+  background: #668663;
+  border-radius: 35px;
+}
+
+/* Боковое меню */
+.aside-menu {
+  width: 237px;
+  height: 551px;
+  margin-left: 32px;
+  margin-top: 28px;
+}
+
+#icon-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#icon {
+  width: 59px;
+  height: 59px;
+  background-image: url(/img/zhiraf-logo.png);
+}
+
+#icon-info {
+  font-size: 10px;
+  color: #FFFFFF;
+  font-weight: bold;
+  line-height: 12px;
+  margin-top: 13px;
+  margin-left: 9px;
+}
+
+#icon-info p {
+  font-weight: 300;
+}
+
+#button-wrapper {
+  margin-top: 55px;
+}
+
+.aside-button {
+  width: 237px;
+  height: 51px;
+  background: #567354;
+  border-radius: 52px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 51px;
+  /* identical to box height */
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.aside-button.selected {
+  background: #FFFFFF;
+  color: #567354;
+}
+
+/* Rectangle 35 */
+.main-window {
+  width: 1133px;
+  height: 876px;
+  margin: 12px 13px 12px 25px;
+  background: #FFFFFF;
+  border-radius: 25px;
+}
+
+#main-inside-wrapper {
+  margin: 17px 40px 12px 49px;
+  height: 860px;
+  width: 1042px;
+}
+
+#main-top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.cage {
+  height: 19px;
+  width: 67px;
+  margin-right: 19px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #D9D9D9;
+}
+
+.cage.selected {
+  color: #484848;
+}
+
+#add-cage {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  background: grey;
+  border-radius: 50%;
+}
+
+#top-right-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#notification {
+  width: 21px;
+  height: 28px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  background-color: #567354;
+  color: #567354;
+}
+
+#login-icon {
+  height: 34px;
+  width: 34px;
+  background-image: url(/img/zhiraf-logo.png);
+  background-size: cover;
+  margin-left: 24px;
+}
+
+#mail {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #484848;
+  margin-left: 13px;
+}
+
+#separator {
+  width: 1042px;
+  height: 3px;
+  background: #D9D9D9;
+  border-radius: 18px;
+  margin-top: 10px;
+}
+
+#header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 35px;
+}
+
+#header-text {
+  width: 136px;
+  height: 38px;
+  left: 350px;
+  top: 108px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 37px;
+  text-align: center;
+  color: #567354;
+  margin-right: 13px;
+}
+
+#header-icon {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: #567354;
+}
+
+#card-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 236px;
+  width: 1042px;
+  margin-top: 26px;
+}
+
+.card {
+  position: relative;
+  width: 236px;
+  height: 495px;
+  background: #F3DBC7;
+  border-radius: 28px;
+  margin-right: 33px;
+}
+
+.edit-card {
+  position: absolute;
+  width: 18px;
+  height: 21px;
+  background: #435F40;
+  top: 14px;
+  right: 23px;
+}
+
+.card-settings {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 174px;
+  height: 94px;
+  background: #668663;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.edit {
+  width: 151px;
+  height: 32px;
+  margin: 15px 13px 0px 10px;
+  border-radius: 58px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.edit.selected {
+  background: #435F40;
+}
+
+.delete {
+  width: 151px;
+  height: 32px;
+  margin: 9px 13px 0px 10px;
+  border-radius: 58px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.giraffe-photo {
+  background-image: url(/img/mid_326078_138810.png);
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 145px;
+  height: 145px;
+  border-radius: 85px;
+}
+
+.giraffe-name {
+  margin-top: 27px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 106px;
+  height: 26px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #435F40;
+}
+
+.giraffe-icons-wrapper {
+  width: 150px;
+  height: 29px;
+  margin-top: 31px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.giraffe-icons {
+  width: 29px;
+  height: 29px;
+  background: #435F40;
+}
+
+.giraffe-data-wrapper {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 189px;
+  height: 39px;
+  background: #DCB18B;
+  border-radius: 58px;
+  margin: 12px auto 2px auto;
+}
+
+.giraffe-data {
+  width: 28px;
+  height: 19px;
+  margin-top: 10px;
+  margin-left: 23px;
+  margin-right: 23px;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #333333;
+}
+
+.giraffe-info-wrapper {
+  margin-left: 33px;
+}
+
+.giraffe-info {
+  font-size: 15px;
+  line-height: 18px;
+  margin-top: 19px;
+  font-weight: 300;
+  color: #333333;
+}
+
+.giraffe-info b {
+  color: #435F40;
+}
+/*# sourceMappingURL=style.css.map */
